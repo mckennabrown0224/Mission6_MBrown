@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Get To Know Joel";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Get To Know Joel</h1>
+</div>
+
+<div>
+    @*Baconsale portion*@
+    <p>Joel Hilton is a passionate movie buff, comedian, and pop culture enthusiast best known for co-hosting the Baconsale podcast.
+        Alongside his fellow hosts, Joel brings humor, deep-cut movie knowledge, and entertaining debates to a loyal fanbase.
+        Whether he’s ranking superhero films, discussing the latest blockbuster, or defending an underrated classic, Joel’s witty insights make Baconsale a must-listen for film lovers.</p>
+
+    <div>
+        <a asp-controller="Home" asp-action="BaconSale">Check out Baconsale!</a>
+    </div>
+
+    <div>
+        @*Baconsale image*@
+        <a asp-controller="Home" asp-action="Baconsale">
+            <img src="~/img/BaconsaleKate.jpg" alt="Baconsale Image" height="500"/>
+        </a>
+    </div>
+
+    @*QuickWits portion*@
+    <p>Beyond the podcast, Joel is also an active performer with Quick Wits Comedy, an improv troupe known for fast-paced, off-the-cuff humor.
+        His quick thinking and comedic timing make him a standout on stage, keeping audiences laughing with unpredictable jokes and hilarious characters.</p>
+    <p>With his love for movies, comedy, and pop culture, Joel Hilton continues to entertain and engage audiences across multiple platforms.
+        Whether on the mic or the stage, he’s always ready with a clever take and a well-timed joke.</p>
+
+    <div>
+        <a asp-controller="Home" asp-action="QuickWitsComedy">Check him out at Quick Wits Comedy!</a>
+    </div>
+
+</div>
+
