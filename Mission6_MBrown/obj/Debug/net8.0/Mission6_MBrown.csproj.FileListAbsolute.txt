@@ -156,3 +156,4 @@
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/Mission6_MBrown.pdb
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/Mission6_MBrown.genruntimeconfig.cache
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/ref/Mission6_MBrown.dll
+/Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/Mission6_MBrown.sourcelink.json

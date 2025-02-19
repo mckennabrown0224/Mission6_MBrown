@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission6_MBrown")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7587bc0896e57ec4a8c4e498a5686f672a5005c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission6_MBrown")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission6_MBrown")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
