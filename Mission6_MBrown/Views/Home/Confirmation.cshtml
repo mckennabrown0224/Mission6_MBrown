@@ -1,45 +1,15 @@
-@model NewMovie
+@model Movie
 
 @*Confirmation form that shows the movie information that was entered and gives the option to add another*@
 <h1>Movie Added Successfully!</h1>
 
-<p>Your movie has been successfully added to the database. Below is the information you submitted:</p>
+@*Message showing the specific movie that was added to the database*@
+<p>Your movie, @Model.Title, has been successfully added to the database.</p>
 
-<table>
-    <tr>
-        <th>Category:</th>
-        <td>@Model.Category</td>
-    </tr>
-    <tr>
-        <th>Title:</th>
-        <td>@Model.Title</td>
-    </tr>
-    <tr>
-        <th>Year:</th>
-        <td>@Model.Year</td>
-    </tr>
-    <tr>
-        <th>Director:</th>
-        <td>@Model.Director</td>
-    </tr>
-    <tr>
-        <th>Rating:</th>
-        <td>@Model.Rating</td>
-    </tr>
-    <tr>
-        <th>Edited:</th>
-        <td>@Model.Edited</td>
-    </tr>
-    <tr>
-        <th>Lent To:</th>
-        <td>@Model.LentTo</td>
-    </tr>
-    <tr>
-        <th>Notes:</th>
-        <td>@Model.Notes</td>
-    </tr>
-</table>
-
+@*buttons to allow the user to navigate to other pages*@
 <li class="nav-item">
-    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AddAMovie">Add Another Movie</a>
+    <button class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AddAMovie">Add Another Movie</button>
+</li>
+<li class="nav-item">
+    <button class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MovieList">View all movies</button>
 </li>

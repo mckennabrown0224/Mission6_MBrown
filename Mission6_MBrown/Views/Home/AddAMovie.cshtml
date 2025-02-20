@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "Add a Movie";
 }
-@model NewMovie
+@model Movie
 
 <div class="text-center">
     <h1 class="display-4">Add a Movie</h1>
@@ -11,11 +11,18 @@
 <h1>New Movie Information</h1>
 
 <form method="post">
+    <input type="hidden" asp-for="MovieId"/>
+
     @*Category entry with validation*@
-    <label asp-for="Category">Category:</label>
-    <input asp-for="Category"/>
-    <span asp-validation-for="Category" class="text-danger"></span>
-    <br/>
+    <label asp-for="CategoryId">Category:</label>
+    <select asp-for="CategoryId">
+        <option value=" ">Select a Category</option>
+        @foreach (var category in ViewBag.Categories)
+        {
+            <option value="@category.CategoryId">@category.CategoryName</option>
+        }
+    </select>
+    <br>
 
     @*Title entry with validation*@
     <label asp-for="Title">Title:</label>
@@ -38,19 +45,35 @@
     @*Rating entry with validation*@
     <label asp-for="Rating">Rating:</label>
     <select asp-for="Rating">
+        <option value="">Select a Rating</option>
         <option value="G">G</option>
+        <option value="NR">NR</option>
         <option value="PG">PG</option>
-        <option value="PG13">PG13</option>
+        <option value="PG13">PG-13</option>
         <option value="R">R</option>
+        <option value="TV14">TV-14</option>
+        <option value="TVG">TV-G</option>
+        <option value="TVPG">TV-PG</option>
+        <option value="TVY7">TV-Y7</option>
+        <option value="UR">UR</option>
     </select>
     <span asp-validation-for="Rating" class="text-danger"></span>
     <br/>
 
-    @*Edited entry without validation (since it's not required)*@
+    @*Edited entry with validation (since it's required)*@
     <label asp-for="Edited">Edited:</label>
     <select asp-for="Edited">
+        <option disabled selected>Select</option>
         <option value="true">Yes</option>
-        <option value="false">No</option>
+        <option value="false" selected>No</option>
+    </select>
+    <br/>
+
+    @*CopiedToPlex entry without validation (since it's not required)*@
+    <label asp-for="CopiedToPlex">Copied To Plex:</label>
+    <select asp-for="CopiedToPlex">
+        <option value="true">Yes</option>
+        <option value="false" selected>No</option>
     </select>
     <br/>
 
@@ -68,3 +91,4 @@
     @*Submit button*@
     <button type="submit">Submit New Movie Information</button>
 </form>
+<button asp-area="" asp-controller="Home" asp-action="MovieList">View Movie List</button>

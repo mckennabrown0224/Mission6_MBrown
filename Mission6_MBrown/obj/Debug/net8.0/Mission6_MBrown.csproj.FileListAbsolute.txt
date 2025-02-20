@@ -140,6 +140,7 @@
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/Mission6_MBrown.MvcApplicationPartsAssemblyInfo.cache
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/Mission6_MBrown.RazorAssemblyInfo.cache
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/Mission6_MBrown.RazorAssemblyInfo.cs
+/Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/Mission6_MBrown.sourcelink.json
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/staticwebassets.build.json
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/staticwebassets.development.json
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/staticwebassets/msbuild.Mission6_MBrown.Microsoft.AspNetCore.StaticWebAssets.props
@@ -156,4 +157,3 @@
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/Mission6_MBrown.pdb
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/Mission6_MBrown.genruntimeconfig.cache
 /Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/ref/Mission6_MBrown.dll
-/Users/kenna/Desktop/IS413/Mission6FilmWebsite/Mission6_MBrown/obj/Debug/net8.0/Mission6_MBrown.sourcelink.json

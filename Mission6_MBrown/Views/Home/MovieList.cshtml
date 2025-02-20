@@ -1,0 +1,57 @@
+@model List<Movie>
+
+
+@*Title and extra button to add a new movie to the movie list*@
+<div class="text-center">
+    <h1 class="display-4">The Joel Hilton Film Collection</h1>
+    <button class="text-dark" asp-area="" asp-controller="Home" asp-action="AddAMovie">Add a Movie</button>
+</div>
+
+<br/>
+
+@*Table that pulls movie items from the movie table in the database and displays them using bootstrap*@
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Rating</th>
+            <th>Edited</th>
+            <th>Copied To Plex</th>
+            <th>Lent To</th>
+            <th>Notes</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @*Loop to pull individual Movie instances from the model*@
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Title</td>
+                <td>@x.Category?.CategoryName</td>@*pulls from category table using primary/foreign key relationship*@
+                <td>@x.Year</td>
+                <td>@x.Director</td>
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.CopiedToPlex</td>
+                <td>@x.LentTo</td>
+                <td>@x.Notes</td>
+                <td>
+                    @*button for editing the individual Movie instance*@
+                    <a class="btn btn-sm btn-info me-2" asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">
+                        <i class="bi bi-pencil-square"></i> Edit
+                    </a>
+                    @*button for deleting the individual Movie instance*@
+                    <a class="btn btn-sm btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.MovieId">
+                        <i class="bi bi-trash"></i> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

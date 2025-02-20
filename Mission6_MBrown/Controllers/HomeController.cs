@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission6_MBrown.Models;
 
 namespace Mission6_MBrown.Controllers;
@@ -41,16 +42,87 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult AddAMovie()
     {
-        return View();
+        ViewBag.Categories = _context.Categories
+            .OrderBy(x => x.CategoryName)
+            .ToList();
+        return View("AddAMovie", new Movie());
     }
     
-    //Adding the movie to go to the database
+    //Saves valid new Movie instances to the database (if invalid, gives errors for correction
     [HttpPost]
-    public IActionResult AddAMovie(NewMovie response)
+    public IActionResult AddAMovie(Movie response)
     {
-        _context.NewMovies.Add(response);
+        if (ModelState.IsValid)
+        {
+            _context.Movies.Add(response); 
+            _context.SaveChanges(); 
+            
+            return View("Confirmation", response);
+        }
+        else
+        {
+            ViewBag.Categories = _context.Categories
+                .OrderBy(x => x.CategoryName)
+                .ToList();
+            
+            return View("AddAMovie", response);
+        }
+    }
+
+    
+    //pulls up list of all movies
+    public IActionResult MovieList()
+    {
+        //Linq query, what we use to pull data from the database
+        var movies = _context.Movies
+            .Include(x => x.Category)
+            .OrderBy(x => x.Title).ToList();
+
+        return View(movies);
+
+    }
+    
+    //pulls up page to edit based on movie chosen by the user
+    [HttpGet]
+    public IActionResult Edit(int id)
+    {
+        var recordToEdit = _context.Movies
+            .Single(x => x.MovieId == id);
+        
+        ViewBag.Categories = _context.Categories
+            .OrderBy(x => x.CategoryName)
+            .ToList();
+        
+        return View("AddAMovie", recordToEdit);
+    }
+    
+    //submits edited information back into the database
+    [HttpPost]
+    public IActionResult Edit(Movie updatedInfo)
+    {
+        _context.Update(updatedInfo);
         _context.SaveChanges();
         
-        return View("Confirmation", response);
+        return RedirectToAction("MovieList");
+    }
+    
+    //pulls up confirmation page to delete the record
+    [HttpGet]
+    public IActionResult Delete(int id)
+    {
+        var recordToDelete = _context.Movies
+            .Single(x => x.MovieId == id);
+
+        return View("Delete", recordToDelete);
+    }
+    
+    //deletes the entry
+    [HttpPost]
+    public IActionResult Delete(Movie deletingInfo)
+    {
+        _context.Movies.Remove(deletingInfo);
+        _context.SaveChanges();
+
+        return RedirectToAction("MovieList");
     }
 }
